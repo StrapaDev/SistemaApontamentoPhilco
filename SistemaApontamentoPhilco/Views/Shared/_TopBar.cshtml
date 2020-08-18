@@ -1,0 +1,101 @@
+﻿<script>
+    function showMenu() {
+        $('#menuTop').show();
+    }
+    function hideMenu() {
+        $('#menuTop').hide();
+    }
+</script>
+
+<style>
+    .logoPhilco a:hover {
+        background-color: #3a3f51 !important;
+    }
+</style>
+
+<!-- start header -->
+<div class="page-header navbar navbar-static-top" id="topBar">
+    <div class="page-header-inner " style="background-color: #3a3f51;" @*onmouseover="showMenu()" onmouseout="hideMenu()"*@>
+        <!-- logo start -->
+        <div class="page-logo">
+            <a href="~/Home/Index" class="logo">
+                <img src="~/Assets/img/britania-logo.png" style="height: 40px; margin-top:-15px; margin-left:-10px" />
+            </a>
+        </div>
+        <!-- logo end -->
+
+        @*<ul class="nav navbar-nav navbar-left in">
+            <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+        </ul>*@
+
+        <!-- start mobile menu -->
+        @*<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span></span>
+        </a>*@
+        <!-- end mobile menu -->
+
+        <!-- start header menu -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- start manage user dropdown -->
+                <li class="dropdown dropdown-user" style="margin-right: -25px;">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <span class="username username-hide-on-mobile" style="color:white;"> @(Session["NomeUsuario"] != null ? Session["NomeUsuario"].ToString() : User.Identity.Name) </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default jello" style="margin-right: 10px;">
+                        <li>
+                            <a href="/Login/Index">
+                                <i class="icon-logout"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="logoPhilco" style="max-height:60px">
+                    <a href="~/Home/Index">
+                        <img src="~/Content/images/philco-logo.png" style="height: 40px;margin-top: -10px;" />
+                    </a>
+                </li>
+                <!-- end manage user dropdown -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="navbar-custom" style="z-index: 10;" @*style="display:none" id="menuTop" onmouseover="showMenu()" onmouseout="hideMenu()"*@>
+        <div class="hor-menu hidden-sm hidden-xs">
+            <ul class="nav navbar-nav">
+                <li class="mega-menu-dropdown ">
+                    <a href="~/Home/Index" class="dropdown-toggle">
+                        <i class="material-icons">home</i> Home
+                    </a>
+                </li>
+                @if (Session["Menu"] != null)
+                {
+                    List<SistemaApontamentoPhilco.Model.Model.Menu> listaMenu = (List<SistemaApontamentoPhilco.Model.Model.Menu>)Session["Menu"];
+                    foreach (var menu in listaMenu.Where(o => o.MenuFilho == null).OrderBy(o => o.Ordem))
+                    {
+                        <li class="mega-menu-dropdown ">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <i class="material-icons">@menu.Icone</i> @menu.Descricao
+                            </a>
+                            @if (listaMenu.Where(o => o.MenuFilho == menu.Id).Count() > 0)
+                            {
+                                <ul class="dropdown-menu pull-left">
+                                    @foreach (var item in listaMenu.Where(o => o.MenuFilho == menu.Id).OrderBy(o => o.Ordem))
+                                    {
+                                        <li class="mega-menu-dropdown ">
+                                            <a href="@item.Url" class="dropdown-toggle">
+                                                <i class="material-icons">@item.Icone</i> @item.Descricao
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end header -->

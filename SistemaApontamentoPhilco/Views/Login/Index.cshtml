@@ -1,0 +1,149 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content="Responsive Admin Template" />
+        <meta name="author" content="SmartUniversity" />
+        <title>Sistema de Apontamento Philco</title>
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+        <!-- icons -->
+        <link href="~/Assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/plugins/iconic/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <!-- bootstrap -->
+        <link href="~/Assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- style -->
+        <link href="~/Assets/css/pages/extra_pages.css" rel="stylesheet" />
+        <!-- favicon -->
+        <link href="~/Assets/img/favicon.ico" rel="shortcut icon" />
+
+        <link href="~/Content/Login.css" rel="stylesheet" />
+
+        <!-- start js include path -->
+        <script src="~/Assets/plugins/jquery/jquery.min.js"></script>
+        <!-- bootstrap -->
+        <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/Assets/js/pages/extra_pages/login.js"></script>
+        <!-- end js include path -->
+        <script src="~/Assets/plugins/sweet-alert/sweetalert.min.js"></script>
+        <script src="~/Assets/js/pages/sweet-alert/sweet-alert-data.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                @if (TempData["MensagemErro"] != null)
+                {
+                    @Html.Raw("swal({title: 'Erro:',html:'" + HttpUtility.JavaScriptStringEncode(TempData["MensagemErro"].ToString()) + "', type:'error', showCancelButton: false });");
+                }
+
+                @if (TempData["MensagemSucesso"] != null)
+                {
+                    @Html.Raw("swal({html:'" + HttpUtility.JavaScriptStringEncode(TempData["MensagemSucesso"].ToString()) + "', type:'success', showCancelButton: false });");
+                }
+
+                @if (TempData["MensagemInfo"] != null)
+                {
+                    @Html.Raw("swal({title: 'Informação:',html:'" + HttpUtility.JavaScriptStringEncode(TempData["MensagemInfo"].ToString()) + "', type:'info', showCancelButton: false});");
+                }
+
+                //if (detectIE()) {
+                //    window.location.href = "/Erro";
+                //}
+            });
+
+            //function detectIE() {
+            //    var ua = window.navigator.userAgent;
+
+            //    // Test values; Uncomment to check result …
+
+            //    // IE 10
+            //    // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
+
+            //    // IE 11
+            //    // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
+
+            //    // Edge 12 (Spartan)
+            //    // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
+
+            //    // Edge 13
+            //    // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
+
+            //    var msie = ua.indexOf('MSIE ');
+            //    if (msie > 0) {
+            //        // IE 10 or older => return version number
+            //        return true
+            //    }
+
+            //    var trident = ua.indexOf('Trident/');
+            //    if (trident > 0) {
+            //        // IE 11 => return version number
+            //        var rv = ua.indexOf('rv:');
+            //        return true
+            //    }
+
+            //    var edge = ua.indexOf('Edge/');
+            //    if (edge > 0) {
+            //        // Edge (IE 12+) => return version number
+            //        return true
+            //    }
+
+            //    // other browser
+            //    return false;
+            //}
+        </script>
+    </head>
+
+    <body>
+        <div class="limiter">
+            @*<div class="container-login100 page-background">*@
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    @using (Html.BeginForm("Logon", "Login", FormMethod.Post, htmlAttributes: new { @class = "login100-form validate-form" }))
+                    {
+                        <span class="login100-form-title">
+                            <img src="~/Assets/img/britania-logo.png" width="100%" />
+                        </span>
+                        
+                        <br />
+
+                        <span class="login100-form-title">
+                            <img src="~/Content/images/philco-logo.png" width="65%" @*height="25px"*@ />
+                        </span>
+
+                        <span class="login100-form-title p-b-34 p-t-27">
+                            Sistema de Apontamento Philco
+                        </span>
+
+                        <div class="wrap-input100 validate-input" data-validate="Enter username">
+                            <input class="input100" type="text" name="username" placeholder="Usuário">
+                            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            <input class="input100" type="password" name="senha" placeholder="Senha">
+                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                        </div>
+
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn" type="submit" onclick="$('.carregando').show()" ;>
+                                Login
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="carregando">
+            <div class="centrotela">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </body>
+</html>
+

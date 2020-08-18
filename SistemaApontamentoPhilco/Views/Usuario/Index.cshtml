@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Usuário";
+}
+
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">@ViewBag.Title</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li>
+                <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/Home/Index">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <i class="fa"></i>&nbsp;<a class="parent-item" href="/Usuario/Index">Cadastro</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-right">
+            <a href="/Usuario/Create" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-success "><i class="material-icons">add</i> Novo</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="card card-topline">
+            <div class="card-head">
+                <header>Pesquisa de  @ViewBag.Title</header>
+                @*<div class="tools">
+                    <a href="/Usuario/Create" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-success " title="Novo"><i class="material-icons">add</i></a>
+                </div>*@
+            </div>
+            <div class="card-body " id="bar-parent2">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            @Html.TextBox("nome", "", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Login</label>
+                            @Html.TextBox("login", "", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    @*<div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                            <label>Perfil</label>
+                            @Html.DropDownList("perfilId", new SelectList(ViewBag.ListaPerfil, "Id", "Descricao"), "Selecione...", new { @class = "form-control" })
+                        </div>
+                    </div>*@
+                    <div class="col-md-12 col-sm-12">
+                        <button type="button" id="btnPesquisar" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default" onclick="Pesquisar();"><i class="material-icons">search</i> Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="grid">
+</div>
+
+<script src="~/Scripts/Usuario/index.js"></script>

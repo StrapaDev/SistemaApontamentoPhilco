@@ -1,0 +1,5 @@
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Model\bin\Debug\SistemaApontamentoPhilco.Model.dll
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Model\bin\Debug\SistemaApontamentoPhilco.Model.pdb
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Model\obj\Debug\SistemaApontamentoPhilco.Model.csproj.CoreCompileInputs.cache
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Model\obj\Debug\SistemaApontamentoPhilco.Model.dll
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Model\obj\Debug\SistemaApontamentoPhilco.Model.pdb

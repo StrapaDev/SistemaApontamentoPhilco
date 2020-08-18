@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Com Carga de Planilha";
+}
+
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">@ViewBag.Title</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li>
+                <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/Home/Index">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <i class="fa"></i>&nbsp;<a class="parent-item" href="/Relatorio/ComCargaPlanilha">Relatório</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            @*<li class="active">Relatório&nbsp;<i class="fa fa-angle-right"></i></li>*@
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="card card-topline">
+            <div class="card-head">
+                <header>Importar Planilha</header>
+            </div>
+            <div class="card-body " id="bar-parent2">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        @using (Html.BeginForm("UploadFile", "Relatorio", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Anexar Arquivo</label>
+                                <input type="file" class="btn btn-default col-sm-10" id="file" name="file" />
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="margin-top: 20px;">
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"><i class="material-icons">restore_page</i> Gerar Relatório</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

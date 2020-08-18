@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home";
+    ViewBag.Title1 = "Apontamento de Produção";
+}
+
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">@ViewBag.Title</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li class="active">
+                <i class="fa fa-home"></i>&nbsp;@ViewBag.Title
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="alert alert-danger alert-dismissible fade hide" role="alert" id="divMsg" style="color: #721c24 !important;">
+    <text id="msg"></text>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="card card-topline">
+            <div class="card-head">
+                <header>@ViewBag.Title1</header>
+            </div>
+            <div class="card-body " id="bar-parent2">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Numero de Série</label>
+                            <input type="text" class="form-control" id="numeroSerie" onkeypress="return capturaTeclaEnterProximoCampo(event)" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Sequencial</label>
+                            <input type="text" class="form-control" id="sequencial" onkeypress="return capturaTeclaEnterFinaliza(event)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Home/index.js"></script>

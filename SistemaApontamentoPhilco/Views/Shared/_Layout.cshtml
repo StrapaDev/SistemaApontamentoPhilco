@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+    <!-- BEGIN HEAD -->
+    <head>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="~/Content/Site.css" rel="stylesheet" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content="Responsive Admin Template" />
+        <meta name="author" content="SmartUniversity" />
+        <title>Sistema de Apontamento Philco</title>
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+        <!-- icons -->
+        <link href="~/Assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!--bootstrap -->
+        <link href="~/Assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen" />
+        <link href="~/Assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" media="screen" />
+        <link href="~/Assets/plugins/summernote/summernote.css" rel="stylesheet" />
+        <!-- morris chart -->
+        @*<link href="~/Assets/plugins/morris/morris.css" rel="stylesheet" type="text/css" />*@
+        <!-- vector map-->
+        <link href="~/Assets/plugins/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <!-- Material Design Lite CSS -->
+        <link href="~/Assets/plugins/material/material.min.css" rel="stylesheet" />
+        <link href="~/Assets/css/material_style.css" rel="stylesheet" />
+        <!-- data tables -->
+        <link href="~/Assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- animation -->
+        <link href="~/Assets/css/pages/animate_page.css" rel="stylesheet" />
+        <link href="~/Assets/plugins/sweet-alert/sweetalert.min.css" rel="stylesheet" />
+        <link href="~/Assets/plugins/jquery-toast/dist/jquery.toast.min.css" rel="stylesheet" />
+        <!-- Template Styles -->
+        <link href="~/Assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/css/pages/formlayout.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/plugins/summernote/summernote.css" rel="stylesheet" />
+        <!--tagsinput-->
+        <link href="~/Assets/plugins/jquery-tags-input/jquery-tags-input.css" rel="stylesheet" />
+        <!--select2-->
+        <link href="~/Assets/plugins/select2/css/select2.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Assets/plugins/material-datetimepicker/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+        <!-- dropzone -->
+        <link href="~/Assets/plugins/dropzone/dropzone.css" rel="stylesheet" media="screen" />
+        <!-- favicon -->
+        <link href="~/Assets/img/favicon.ico" rel="shortcut icon" />
+        <!-- Owl Carousel Assets -->
+        <link href="~/Assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+        <link href="~/Assets/plugins/owl-carousel/owl.theme.css" rel="stylesheet" />
+        <link href="~/Content/multi-select.css" rel="stylesheet" />
+
+        <!-- steps -->
+        <link href="~/Assets/css/pages/steps.css" rel="stylesheet" />
+        <!-- select multiple-->
+        <link href="~/Content/multiple-select.css" rel="stylesheet" />
+
+        <!-- Flavor -->
+        <link href="~/Content/flavor-lightbox.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/flavor-style.css" rel="stylesheet" type="text/css" />
+
+        <style>
+            /*/ width /*/
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /*/ Track /*/
+            ::-webkit-scrollbar-track {
+                background: #3a3f51;
+            }
+
+            /*/ Handle /*/
+            ::-webkit-scrollbar-thumb {
+                background: #888;
+            }
+
+                /*/ Handle on hover /*/
+                ::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+        </style>
+
+        @*@Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)*@
+        <!-- start js include path -->
+
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery.multi-select.js"></script>
+        <script src="~/Scripts/jquery.quicksearch.js"></script>
+        <script src="~/Assets/plugins/popper/popper.min.js"></script>
+        <script src="~/Assets/plugins/jquery-blockui/jquery.blockui.min.js"></script>
+        <script src="~/Assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="~/Assets/plugins/jquery-validation/js/jquery.validate.js"></script>
+        <script src="~/Assets/plugins/jquery-validation/js/additional-methods.min.js"></script>
+        <script src="~/Assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script src="~/Scripts/inputmask/inputmask.min.js"></script>
+        <script src="~/Scripts/inputmask/inputmask.numeric.extensions.min.js"></script>
+        <script src="~/Scripts/inputmask/inputmask.phone.extensions.min.js"></script>
+        <script src="~/Scripts/inputmask/inputmask.regex.extensions.min.js"></script>
+        <script src="~/Scripts/inputmask/jquery.inputmask.min.js"></script>
+        <script src="~/Scripts/inputmask/inputmask.extensions.min.js"></script>
+        <script src="~/Assets/plugins/moment/moment.min.js"></script>
+
+        <script src="~/Scripts/account.min.js"></script>
+        <!-- bootstrap -->
+        <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/Assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+        <script src="~/Assets/js/pages/sparkline/sparkline-data.js"></script>
+        <script src="~/Assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+        <script src="~/Assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+        <script src="~/Assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.pt-BR.js"></script>
+        <!-- Common js-->
+        <script src="~/Assets/js/app.js"></script>
+        <script src="~/Assets/js/pages/validation/form-validation.js"></script>
+        <script src="~/Assets/js/layout.js"></script>
+        <script src="~/Assets/js/theme-color.js"></script>
+        <!-- material -->
+        <script src="~/Assets/plugins/material/material.min.js"></script>
+        <!-- data tables -->
+        <script src="~/Assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/Assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js"></script>
+        <!-- Sweet Alert -->
+        <script src="~/Assets/plugins/sweet-alert/sweetalert.min.js"></script>
+        <script src="~/Assets/js/pages/sweet-alert/sweet-alert-data.js"></script>
+        <!-- animation -->
+        <script src="~/Assets/js/pages/ui/animations.js"></script>
+        <script src="~/Assets/js/pages/material_select/getmdl-select.js"></script>
+        <script src="~/Assets/plugins/material-datetimepicker/moment-with-locales.min.js"></script>
+        <script src="~/Assets/plugins/material-datetimepicker/bootstrap-material-datetimepicker.js"></script>
+        <script src="~/Assets/plugins/material-datetimepicker/datetimepicker.js"></script>
+        <!--tags input-->
+        <script src="~/Assets/plugins/jquery-tags-input/jquery-tags-input.js"></script>
+        <script src="~/Assets/plugins/jquery-tags-input/jquery-tags-input-init.js"></script>
+        <!--select2-->
+        <script src="~/Assets/plugins/select2/js/select2.js"></script>
+        @*<script src="~/Assets/js/pages/select2/select2-init.js"></script>*@
+        <!--Chart JS-->
+        <script src="~/Assets/plugins/chart-js/Chart.bundle.js"></script>
+        <script src="~/Assets/plugins/chart-js/utils.js"></script>
+        <script src="~/Assets/js/pages/chart/chartjs/chartjs-data.js"></script>
+        <!-- summernote -->
+        <script src="~/Assets/plugins/summernote/summernote.min.js"></script>
+        @*<script src="~/Assets/js/pages/summernote/summernote-data.js"></script>*@
+        <!-- echart -->
+        <script src="~/Assets/plugins/echarts/echarts.js"></script>
+        @*<script src="~/Assets/js/pages/chart/echart/echart-data.js"></script>*@
+        <!-- morris chart -->
+        @*<script src="~/Assets/plugins/morris/morris.min.js"></script>
+            <script src="~/Assets/plugins/morris/raphael-min.js"></script>*@
+        <!-- dropzone -->
+        <script src="~/Assets/plugins/dropzone/dropzone.js"></script>
+        <!-- owl carousel -->
+        <script src="~/Assets/plugins/owl-carousel/owl.carousel.js"></script>
+        <script src="~/Assets/js/pages/owl-carousel/owl_data.js"></script>
+        <!-- echart -->
+        @*<script src="~/Assets/plugins/echarts/echarts.js"></script>
+            <script src="~/Assets/js/pages/chart/echart/echart-data.js"></script>*@
+
+        <!-- steps -->
+        <script src="~/Assets/plugins/steps/jquery.steps.js"></script>
+        <!-- select multiple-->
+        <script src="~/Scripts/multiple-select.js"></script>
+        <!-- notifications -->
+        <script src="~/Assets/plugins/jquery-toast/dist/jquery.toast.min.js"></script>
+        <!-- Flavor -->
+        <script src="~/Scripts/jquery.flavor-min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                @if (TempData["MensagemErro"] != null)
+                {
+                    @Html.Raw("swal({title: 'Erros:',html:'" + HttpUtility.JavaScriptStringEncode(TempData["MensagemErro"].ToString()) + "', type:'error', showCancelButton: false });");
+                }
+
+                @if (TempData["MensagemSucesso"] != null)
+                {
+                    @Html.Raw("swal({html:'" + HttpUtility.JavaScriptStringEncode(TempData["MensagemSucesso"].ToString()) + "', type:'success', showCancelButton: false });");
+                }
+
+                @if (TempData["MensagemInfo"] != null)
+                {
+                    @Html.Raw("swal({title: 'Informação:',html:'" + HttpUtility.JavaScriptStringEncode(TempData["MensagemInfo"].ToString()) + "', type:'info', showCancelButton: false});");
+                }
+
+                $('form').keypress(keypressHandler);
+            });
+
+            function keypressHandler(e) {
+                if (e.which == 13) {
+                    e.preventDefault(); //stops default action: submitting form
+                }
+            }
+        </script>
+    </head>
+    <!-- END HEAD -->
+
+    <body class="sidemenu-closed-hidelogo page-content-white page-md page-full-width header-white dark-sidebar-color logo-dark">
+        <div class="page-wrapper">
+            @RenderPage("_TopBar.cshtml")
+            <!-- start page container -->
+            @*<div class="page-container">
+                @RenderPage("_LeftMenu.cshtml")
+            </div>*@
+            <!-- end sidebar menu -->
+            <!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    @RenderBody()
+                </div>
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page container -->
+
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner">
+                @DateTime.Now.Year - Britânia/Philco <br />
+                @*Ultima Atualização: @DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")*@
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- end footer -->
+
+        <div class="carregando">
+            <div class="centrotela">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </body>
+</html>

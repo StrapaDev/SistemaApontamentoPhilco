@@ -1,0 +1,13 @@
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\SistemaApontamentoPhilco.Service.dll
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\SistemaApontamentoPhilco.Service.pdb
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\EntityFramework.dll
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\SistemaApontamentoPhilco.Model.dll
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\SistemaApontamentoPhilco.Model.pdb
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\EntityFramework.xml
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\obj\Debug\SistemaApontamentoPhilco.Service.csprojAssemblyReference.cache
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\obj\Debug\SistemaApontamentoPhilco.Service.csproj.CoreCompileInputs.cache
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\obj\Debug\SistemaApontamentoPhilco.Service.csproj.CopyComplete
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\obj\Debug\SistemaApontamentoPhilco.Service.dll
+C:\Users\felipe.strapasson\source\repos\SistemaApontamentoPhilco\SistemaApontamentoPhilco.Service\obj\Debug\SistemaApontamentoPhilco.Service.pdb

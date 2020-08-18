@@ -1,0 +1,103 @@
+﻿@using SistemaApontamentoPhilco.Model.Model
+@model Usuario
+@{
+    ViewBag.Title = "Usuário";
+}
+
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">Novo @ViewBag.Title</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li>
+                <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/Home/Index">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <i class="fa"></i>&nbsp;<a class="parent-item" href="/Usuario/Index">Cadastro</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <i class="fa"></i>&nbsp;<a class="parent-item" href="/Usuario/Index">@ViewBag.Title</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Novo @ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="card card-topline">
+            <div class="card-head">
+                <header>Novo @ViewBag.Title</header>
+            </div>
+            <div class="card-body " id="bar-parent2">
+                @using (Html.BeginForm("Salvar", "Usuario", FormMethod.Post, new { @id = "frmUsuario" }))
+                {
+                    @Html.HiddenFor(m => m.Id)
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <div class="input-icon right">
+                                    <i class="fa"></i>
+                                    @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                                <label>Login</label>
+                                <div class="input-icon right">
+                                    <i class="fa"></i>
+                                    @Html.TextBoxFor(m => m.Login, new { @class = "form-control " })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                                <label>Perfil</label>
+                                <div class="input-icon right">
+                                    <i class="fa"></i>
+                                    @Html.DropDownListFor(m => m.PerfilId, new SelectList(ViewBag.ListaPerfil, "Id", "Descricao"), "Selecione...", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="col-md-12 col-sm-12" style="padding-left:0px; padding-right:0px;">
+                                <div class="form-group">
+                                    <label></label>
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded" for="SenhaIntegrada" id="lblSenhaIntegrada" onclick="CheckSenhaIntegrada()">
+                                            @Html.CheckBoxFor(m => m.SenhaIntegrada, new { @class = "mdl-switch__input" })
+                                            <span class="mdl-switch__label">Senha Integrada</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="col-md-12 col-sm-12" style="padding-left:0px; padding-right:0px;">
+                                <label>Senha</label>
+                                @if (Model != null && Model.SenhaIntegrada)
+                                {
+                                    @Html.PasswordFor(m => m.Senha, new { @class = "form-control ", @readOnly = "readOnly" })
+                                }
+                                else
+                                {
+                                    @Html.PasswordFor(m => m.Senha, new { @class = "form-control " })
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12" style="margin-top: 15px;">
+                            <button type="button" onclick="SalvarUsuario()" id="btnSalvar" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-primary"><i class="material-icons">save</i> Salvar</button>
+                            <a href="\Usuario\Index" id="btnCancelar" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default"><i class="material-icons">cancel</i> Cancelar</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Usuario/create.js"></script>
